@@ -1,0 +1,28 @@
+{
+  "name": "node-postgres-worker-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/api.js",
+    "worker": "node src/worker.js",
+    "migrate": "node src/migrate.js",
+    "test": "node --test test/*.test.js",
+    "check:iac": "tsc --noEmit",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "ajv": "^8.20.0",
+    "railway": "^3.16.0",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.1"
+  }
+}
