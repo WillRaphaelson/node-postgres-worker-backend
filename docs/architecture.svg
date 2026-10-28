@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+<title id="title">One backend, three Railway services</title><desc id="desc">A client submits reports to the public API. The API saves work in private Postgres. A separate private worker reads jobs and writes completed results.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8552e7"/></marker></defs>
+<rect width="1400" height="620" rx="24" fill="#faf9fd"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#241638">
+<text x="64" y="69" font-size="30" font-weight="700">One backend, three Railway services</text>
+<text x="64" y="107" font-size="20" fill="#665b74">Accept the request now. Process the work independently.</text>
+<rect x="380" y="151" width="956" height="409" rx="22" fill="#f0eafa" stroke="#d5c6ec" stroke-width="2"/>
+<text x="410" y="190" font-size="18" font-weight="700" fill="#7041b9">RAILWAY PROJECT · PRIVATE SERVICE CONNECTIONS</text>
+<rect x="65" y="271" width="218" height="126" rx="16" fill="white" stroke="#cfc7d9" stroke-width="2"/>
+<text x="174" y="319" text-anchor="middle" font-size="26" font-weight="700">Client</text>
+<text x="174" y="353" text-anchor="middle" font-size="18" fill="#665b74">Submit / check report</text>
+<rect x="416" y="270" width="238" height="128" rx="16" fill="white" stroke="#8552e7" stroke-width="2"/>
+<text x="535" y="315" text-anchor="middle" font-size="26" font-weight="700">Node.js API</text>
+<text x="535" y="348" text-anchor="middle" font-size="18" fill="#665b74">Public HTTPS endpoint</text>
+<text x="535" y="375" text-anchor="middle" font-size="17" fill="#7041b9">npm start</text>
+<rect x="737" y="270" width="230" height="128" rx="16" fill="white" stroke="#8552e7" stroke-width="2"/>
+<text x="852" y="315" text-anchor="middle" font-size="26" font-weight="700">Postgres</text>
+<text x="852" y="348" text-anchor="middle" font-size="18" fill="#665b74">Pending jobs + results</text>
+<text x="852" y="375" text-anchor="middle" font-size="17" fill="#7041b9">Persistent volume</text>
+<rect x="1050" y="270" width="250" height="128" rx="16" fill="white" stroke="#8552e7" stroke-width="2"/>
+<text x="1175" y="315" text-anchor="middle" font-size="26" font-weight="700">Node.js worker</text>
+<text x="1175" y="348" text-anchor="middle" font-size="18" fill="#665b74">No public endpoint</text>
+<text x="1175" y="375" text-anchor="middle" font-size="17" fill="#7041b9">npm run worker</text>
+<path d="M283 334H405" fill="none" stroke="#8552e7" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="345" y="254" text-anchor="middle" font-size="17" fill="#665b74">HTTPS</text>
+<path d="M654 334H726" fill="none" stroke="#8552e7" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1041 334H978" fill="none" stroke="#8552e7" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="696" y="243" text-anchor="middle" font-size="17" fill="#665b74">Save / read</text>
+<text x="1010" y="440" text-anchor="middle" font-size="17" fill="#665b74">Claim / complete</text>
+<text x="410" y="519" font-size="19" fill="#665b74">Only the API is public. The worker keeps running between requests.</text>
+</g></svg>
