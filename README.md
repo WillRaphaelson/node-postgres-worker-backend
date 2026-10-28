@@ -4,9 +4,13 @@ Three services, one repository. The Express API stores report requests in Postgr
 
 ## Railway
 
-The `.railway/railway.ts` infrastructure definition provisions Postgres, API and worker from this repository. API: `npm start`, pre-deploy: `npm run migrate`, health check: `/healthz`, port 3000. Worker: `npm run worker`, no public domain. Both application services reference the private Postgres `DATABASE_URL`; disable sleeping for this continuous-polling workload. Generate an API_TOKEN of at least 24 characters. Generate a public domain for the API only.
+The `.railway/railway.ts` infrastructure definition provisions Postgres, API and worker from this repository. API: `npm start`, pre-deploy: `npm run migrate`, health check: `/healthz`, port 3000. Worker: `npm run worker`, no public domain. Both application services reference the private Postgres `DATABASE_URL`; disable sleeping for this continuous-polling workload. The infrastructure definition generates a 64-character API_TOKEN. Generate a public domain for the API only.
 
 Migrations run once per API deployment, not per application replica or worker startup. The initial migration is repeatable. Worker startup waits up to 60 seconds for the schema.
+
+## Verify a hosted deployment
+
+Copy the generated API_TOKEN from the API service’s Variables tab into your shell. Do not commit it. Set API_URL to your API’s generated HTTPS domain. Run `npm ci` and `npm run smoke` with both environment variables set.
 
 ## Local setup
 
