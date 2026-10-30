@@ -4,7 +4,12 @@ Three services, one repository. The Express API stores report requests in Postgr
 
 ## Railway
 
-The `.railway/railway.ts` infrastructure definition provisions Postgres, API and worker from this repository. API: `npm start`, pre-deploy: `npm run migrate`, health check: `/healthz`, port 3000. Worker: `npm run worker`, no public domain. Both application services reference the private Postgres `DATABASE_URL`; disable sleeping for this continuous-polling workload. Set a random API_TOKEN of at least 24 characters before applying IaC; the definition preserves it across infrastructure changes. The published template will generate its own API_TOKEN. Generate a public domain for the API only.
+[Deploy the three-service template](https://railway.com/deploy/node-postgres-worker-backend). It provisions the API, worker, and Postgres with generated secrets and private connection references.
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/node-postgres-worker-backend?utm_medium=integration&utm_source=button&utm_campaign=Node.js%20API%20Postgres%20Worker)
+
+
+The `.railway/railway.ts` infrastructure definition provisions Postgres, API and worker from this repository. API: `npm start`, pre-deploy: `npm run migrate`, health check: `/healthz`, port 3000. Worker: `npm run worker`, no public domain. Both application services reference the private Postgres `DATABASE_URL`; disable sleeping for this continuous-polling workload. Set a random API_TOKEN of at least 24 characters before applying IaC; the definition preserves it across infrastructure changes. The published template generates its own API_TOKEN. Generate a public domain for the API only.
 
 For an existing generated API domain, set API_SERVICE_DOMAIN to that hostname when running IaC plan/apply so the definition retains the domain. The explicit Postgres private endpoint is named postgres. If private networking is still initializing after provisioning, wait for the database deployment to finish before deploying the application services.
 
